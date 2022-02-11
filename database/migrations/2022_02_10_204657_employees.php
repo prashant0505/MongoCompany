@@ -14,7 +14,8 @@ class Employees extends Migration
     public function up()
     {
         Schema::create('employees', function ($collection) {
-            $collection->index('slug');
+            $collection->string('name');
+            $collection->integer('age');
          });
     }
 

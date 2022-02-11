@@ -24,7 +24,8 @@ class UpdateCompanyRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => 'string|MIN:3',
+            'age' => 'integer'
         ];
     }
 }

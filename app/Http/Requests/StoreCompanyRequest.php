@@ -24,7 +24,8 @@ class StoreCompanyRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => 'required|string|MIN:3',
+            'age' => 'required|integer'
         ];
     }
 }
