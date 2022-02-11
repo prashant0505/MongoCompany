@@ -37,9 +37,8 @@ class EmployeeController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreCompanyRequest $request)
-    {
-        $emp = Employee::create([$request->validated()]);
+    public function store(StoreCompanyRequest $request){
+        $emp = Employee::create($request->validated());
         return response()->json([
             'message' => 'Employee Created Successfully',
             'Employee' => $emp
@@ -52,8 +51,7 @@ class EmployeeController extends Controller
      * @param  \App\Models\Employee  $employee
      * @return \Illuminate\Http\Response
      */
-    public function show(ShowCompanyRequest $request,Employee $employee)
-    {
+    public function show(ShowCompanyRequest $request,Employee $employee){
         return $employee;
     }
 
@@ -63,8 +61,7 @@ class EmployeeController extends Controller
      * @param  \App\Models\Employee  $employee
      * @return \Illuminate\Http\Response
      */
-    public function edit(Employee $employee)
-    {
+    public function edit(Employee $employee){
         //
     }
 
@@ -75,9 +72,8 @@ class EmployeeController extends Controller
      * @param  \App\Models\Employee  $employee
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateCompanyRequest $request, Employee $employee)
-    {
-        $updated = $employee->update([$request->validated()]);
+    public function update(UpdateCompanyRequest $request, Employee $employee){
+        $updated = $employee->update($request->validated());
         return response()->json([
             'message' => 'Employee Updated Successfully',
             'Employee' => $updated
